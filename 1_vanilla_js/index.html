@@ -1,9 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <title>Vanilla JSㆍTodo App</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-        
+        <header class="header">
+            <h1 class="title">todos</h1>
+        </header>
+        <main class="main">
+            <input class="new-task task-box" type="text" placeholder="오늘도 힘내서 해볼까?">
+            <ul class="todo-list">
+                <li class="todo-item task-box">
+                    <input class="checkbox-round" type="checkbox">
+                    <label class="todo-text">todo item</label>
+                    <button class="delete"></button>
+                </li>
+            </ul>
+            <section class="status task-box">
+                <span class="todo-count">
+                    <strong class="count">0</strong>
+                    개 남음
+                </span>
+                <ul class="todo-filters">
+                    <li><button class="status-btn">모두</button></li>
+                    <li><button class="status-btn">대기 중</button></li>
+                    <li><button class="status-btn">완료</button></li>
+                </ul>
+            </section>
+        </main>
+        <script src="./script.js"></script>
     </body>
 </html>

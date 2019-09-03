@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Sunflower:300&display=swap');
+@import url('https://fonts.googleapis.com/earlyaccess/jejugothic.css');
+
+/* style general page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    background-color: #f5f5f5;
+    font-family: 'Jeju Gothic', sans-serif;
+    text-align: center;
+}
+
+/* style title */
+.title {
+    color: #FFDBC6;
+    font-family: 'Sunflower', sans-serif;
+    font-size: 6rem;
+    padding: 1rem;
+}
+
+/* style main and all task boxes */
+.main {
+    width: 500px;
+    margin: auto;
+    box-shadow: 0 0 30px #DEDEDE;
+}
+.task-box {
+    background-color: #f8f7f7;
+    width: 500px;
+    padding: 20px;
+    border: 1px solid #DEDEDE;
+    font-family: 'Jeju Gothic', sans-serif;
+    font-size: 1.25rem;
+}
+
+/* style the input box */
+.new-task::placeholder {
+    color: #DEDEDE;
+}
+
+/* style the todo list container */
+.todo-list {
+    list-style-type: none;
+}
+
+/* style the todo task items */
+.todo-item {
+    background-color: #f8f7f7;
+    text-align: left;
+}
+.checkbox-round {
+    background-color: white;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.checkbox-round:checked {
+    background-color: greenyellow;
+    content: "\2713";
+}
+.todo-text {
+    padding: 0 10px;
+}
+
+/* */
+.status {
+    display: flex;
+    color: grey;
+    padding: 12px 20px;
+}
+.todo-count {
+    font-size: 1rem;
+}
+.count {
+    color: #FFDBC6;
+}
+.todo-filters {
+    display: flex;
+    list-style-type: none;
+    text-align: center;
+    margin: auto;
+}
+.status-btn {
+    background-color: inherit;
+    color: grey;
+    border: none;
+    font-family: 'Jeju Gothic', sans-serif;
+    font-size: 1rem;
+    vertical-align: middle;
+    margin: 0 15px;
+}
