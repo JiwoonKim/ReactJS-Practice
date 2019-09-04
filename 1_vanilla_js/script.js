@@ -2,7 +2,21 @@
 
 const input = document.querySelector('.new-task');
 const todo_list = document.querySelector('.todo-list');
-const count = document.querySelector('.count');
+const count_view = document.querySelector('.count');
+
+let total_count = 0;
+let completed_count = 0;
+
+//
+document.addEventListener('DOMContentLoaded', () => {
+
+    input.addEventListener('keyup', (event) => {
+        if (event.key === "Enter") {
+            addTodo(input.value);
+            input.value = "";
+        }
+    });
+});
 
 // add todo-item to todo-list
 const addTodo = (text) => {
@@ -10,10 +24,11 @@ const addTodo = (text) => {
     todo_item.classList.add('todo-item', 'task-box');
     todo_list.appendChild(todo_item);
 
-    const todo_checkbox = document.createElement('input');
-    todo_checkbox.type = 'checkbox';
+    const todo_checkbox = document.createElement('button');
     todo_checkbox.classList.add('checkbox-round');
+    todo_checkbox.textContent = "✔";
     todo_item.appendChild(todo_checkbox);
+    todo_checkbox.addEventListener('click', () => checkTodo(todo_checkbox));
 
     const todo_text = document.createElement('label');
     todo_text.classList.add('todo-text');
@@ -21,8 +36,21 @@ const addTodo = (text) => {
     todo_item.appendChild(todo_text);
     
     const todo_delete = document.createElement('button');
-    todo_delete.classList.add('delete');
+    todo_delete.classList.add('delete-btn');
+    todo_delete.textContent = "𝗫";
     todo_item.appendChild(todo_delete);
 
-    count.textContent = count.textContent + 1;
+    total_count++;
+    count_view.textContent = total_count;
+};
+
+const checkTodo = (todo_checkbox) => {
+
+    if (todo_checkbox.classList.contains('checkbox-completed')) {
+        todo_checkbox.classList.remove('checkbox-completed');
+        completed_count--;
+    } else {
+        todo_checkbox.classList.add('checkbox-completed');
+        completed_count++;
+    }
 }

@@ -29,7 +29,8 @@ html, body {
 }
 .task-box {
     background-color: #f8f7f7;
-    width: 500px;
+    width: 100%;
+    height: auto;
     padding: 20px;
     border: 1px solid #DEDEDE;
     font-family: 'Jeju Gothic', sans-serif;
@@ -48,11 +49,14 @@ html, body {
 
 /* style the todo task items */
 .todo-item {
+    display: grid;
+    grid-template-columns: 1.5rem auto 1.5rem;
     background-color: #f8f7f7;
-    text-align: left;
+    width: 100%;
 }
 .checkbox-round {
     background-color: white;
+    color: white;
     width: 1.5rem;
     height: 1.5rem;
     border: 1px solid #ddd;
@@ -61,12 +65,19 @@ html, body {
     cursor: pointer;
     vertical-align: middle;
 }
-.checkbox-round:checked {
-    background-color: greenyellow;
-    content: "\2713";
+.checkbox-completed {
+    background-color: #BADFE5;
 }
 .todo-text {
     padding: 0 10px;
+    text-align: left;
+}
+.delete-btn {
+    background-color: inherit;
+    border: none;
+}
+.delete-btn:hover {
+    color: #FFDBC6;
 }
 
 /* */
