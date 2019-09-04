@@ -41,7 +41,7 @@ const addTodo = (text) => {
     todo_item.appendChild(todo_delete);
 
     total_count++;
-    count_view.textContent = total_count;
+    viewUncompletedCount();
 };
 
 const checkTodo = (todo_item) => {
@@ -59,4 +59,10 @@ const checkTodo = (todo_item) => {
         todo_text.classList.add('todo-text-completed');
         completed_count++;
     }
+
+    viewUncompletedCount();
+}
+
+const viewUncompletedCount = () => {
+    count_view.textContent = total_count - completed_count;
 }
