@@ -72,6 +72,10 @@ html, body {
     padding: 0 10px;
     text-align: left;
 }
+.todo-text-completed {
+    color: #BADFE5;
+    text-decoration: line-through;
+}
 .delete-btn {
     background-color: inherit;
     border: none;

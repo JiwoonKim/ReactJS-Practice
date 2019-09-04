@@ -28,7 +28,7 @@ const addTodo = (text) => {
     todo_checkbox.classList.add('checkbox-round');
     todo_checkbox.textContent = "✔";
     todo_item.appendChild(todo_checkbox);
-    todo_checkbox.addEventListener('click', () => checkTodo(todo_checkbox));
+    todo_checkbox.addEventListener('click', () => checkTodo(todo_item));
 
     const todo_text = document.createElement('label');
     todo_text.classList.add('todo-text');
@@ -44,13 +44,19 @@ const addTodo = (text) => {
     count_view.textContent = total_count;
 };
 
-const checkTodo = (todo_checkbox) => {
+const checkTodo = (todo_item) => {
+
+    const todo_items = todo_item.childNodes;
+    const todo_checkbox = todo_items[0];
+    const todo_text = todo_items[1];
 
     if (todo_checkbox.classList.contains('checkbox-completed')) {
         todo_checkbox.classList.remove('checkbox-completed');
+        todo_text.classList.remove('todo-text-completed');
         completed_count--;
     } else {
         todo_checkbox.classList.add('checkbox-completed');
+        todo_text.classList.add('todo-text-completed');
         completed_count++;
     }
 }
