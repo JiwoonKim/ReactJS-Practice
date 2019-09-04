@@ -7,3 +7,6 @@ TODO App implemented in various languages, frameworks, design patterns
 4. 
 
 ## 1. Vanilla JavaScript
+
+
+## 2. JavaScript MVC Pattern

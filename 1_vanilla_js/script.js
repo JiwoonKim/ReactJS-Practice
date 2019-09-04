@@ -12,8 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     input.addEventListener('keyup', (event) => {
         if (event.key === "Enter") {
-            addTodo(input.value);
-            input.value = "";
+
+            if (input.value == "") {
+                input.placeholder = "빈 할 일은 아니되오!"
+            } else {
+                addTodo(input.value);
+                input.value = "";
+            }
         }
     });
 });
