@@ -39,6 +39,7 @@ const addTodo = (text) => {
     todo_delete.classList.add('delete-btn');
     todo_delete.textContent = "𝗫";
     todo_item.appendChild(todo_delete);
+    todo_delete.addEventListener('click', () => deleteTodo(todo_item));
 
     total_count++;
     viewUncompletedCount();
@@ -61,6 +62,19 @@ const checkTodo = (todo_item) => {
     }
 
     viewUncompletedCount();
+}
+
+const deleteTodo = (todo_item) => {
+
+    const todo_checkbox = todo_item.childNodes[0];
+    if (todo_checkbox.classList.contains('checkbox-completed')) {
+        completed_count--;
+    }
+
+    todo_list.removeChild(todo_item);
+
+    total_count--;
+    count_view.textContent = total_count - completed_count;
 }
 
 const viewUncompletedCount = () => {
